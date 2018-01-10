@@ -1,5 +1,8 @@
-angular.module('MyApp', ['ngRoute', 'satellizer'])
-  .config(function($routeProvider, $locationProvider, $authProvider) {
+angular.module('MyApp', [
+    'ngRoute',
+    'satellizer'])
+
+    .config(function($routeProvider, $locationProvider, $authProvider) {
     $locationProvider.html5Mode(true);
 
     $routeProvider

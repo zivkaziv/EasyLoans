@@ -1,5 +1,8 @@
-angular.module('MyApp', ['ngRoute', 'satellizer'])
-  .config(["$routeProvider", "$locationProvider", "$authProvider", function($routeProvider, $locationProvider, $authProvider) {
+angular.module('MyApp', [
+    'ngRoute',
+    'satellizer'])
+
+    .config(["$routeProvider", "$locationProvider", "$authProvider", function($routeProvider, $locationProvider, $authProvider) {
     skipIfAuthenticated.$inject = ["$location", "$auth"];
     loginRequired.$inject = ["$location", "$auth"];
     $locationProvider.html5Mode(true);
