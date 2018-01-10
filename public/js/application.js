@@ -1,6 +1,6 @@
 angular.module('MyApp', [
     'ngRoute',
-    'satellizer'])
+    'satellizer','rzModule'])
 
     .config(["$routeProvider", "$locationProvider", "$authProvider", function($routeProvider, $locationProvider, $authProvider) {
     skipIfAuthenticated.$inject = ["$location", "$auth"];
@@ -9,7 +9,8 @@ angular.module('MyApp', [
 
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/home.html'
+        templateUrl: 'partials/home.html',
+        controller: 'HomeCtrl'
       })
       .when('/contact', {
         templateUrl: 'partials/contact.html',
@@ -120,6 +121,34 @@ angular.module('MyApp')
       $location.path('/');
     };
   }]);
+
+angular.module('MyApp')
+    .controller('HomeCtrl', ["$scope", "$location", "$window", "$auth", function($scope, $location, $window, $auth) {
+        $scope.slider = { //requires angular-bootstrap to display tooltips
+            value: 5,
+            options: {
+                floor: 0,
+                ceil: 10,
+                showTicks: true,
+                ticksTooltip: function(v) {
+                    return 'Tooltip for ' + v;
+                }
+            }
+        };
+        $scope.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
+        };
+
+        $scope.isAuthenticated = function() {
+            return $auth.isAuthenticated();
+        };
+
+        $scope.logout = function() {
+            $auth.logout();
+            delete $window.localStorage.user;
+            $location.path('/');
+        };
+    }]);
 
 angular.module('MyApp')
   .controller('LoginCtrl', ["$scope", "$rootScope", "$location", "$window", "$auth", function($scope, $rootScope, $location, $window, $auth) {

@@ -1,13 +1,14 @@
 angular.module('MyApp', [
     'ngRoute',
-    'satellizer'])
+    'satellizer','rzModule'])
 
     .config(function($routeProvider, $locationProvider, $authProvider) {
     $locationProvider.html5Mode(true);
 
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/home.html'
+        templateUrl: 'partials/home.html',
+        controller: 'HomeCtrl'
       })
       .when('/contact', {
         templateUrl: 'partials/contact.html',
