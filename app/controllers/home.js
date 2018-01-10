@@ -1,16 +1,22 @@
 angular.module('MyApp')
     .controller('HomeCtrl', function($scope, $location, $window, $auth) {
-        $scope.slider = { //requires angular-bootstrap to display tooltips
-            value: 5,
+        $scope.slider = {
+            value: 40,
             options: {
-                floor: 0,
-                ceil: 10,
-                showTicks: true,
-                ticksTooltip: function(v) {
-                    return 'Tooltip for ' + v;
-                }
+                showTicksValues: true,
+                stepsArray: [
+                    // {value: '20', legend: '20€'},
+                    {value: '20'},
+                    {value: '40'},
+                    {value: '50'},
+                    {value: '70'},
+                    {value: '100'}
+                    // {value: 4},
+                ]
             }
         };
+
+
         $scope.isActive = function (viewLocation) {
             return viewLocation === $location.path();
         };

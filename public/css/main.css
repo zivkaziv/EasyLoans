@@ -6137,3 +6137,22 @@ textarea {
   border-radius: 2px;
   letter-spacing: 0.2em;
   text-transform: uppercase; }
+
+.metadata-loan-pair {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center; }
+
+.metadata-loan-pair .metadata-loan-title {
+  font-size: 12px; }
+
+.metadata-loan-pair .metadata-loan-value {
+  font-size: 20px; }
+
+.metadata-loan-pair .metadata-loan-value-red {
+  color: red; }
