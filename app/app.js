@@ -1,6 +1,9 @@
 angular.module('MyApp', [
     'ngRoute',
-    'satellizer','rzModule'])
+    'satellizer',
+    'rzModule',
+    'ngMaterial',
+    'md-steppers'])
 
     .config(function($routeProvider, $locationProvider, $authProvider) {
     $locationProvider.html5Mode(true);
