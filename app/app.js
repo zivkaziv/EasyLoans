@@ -14,6 +14,12 @@ angular.module('MyApp', [
         templateUrl: 'partials/contact.html',
         controller: 'ContactCtrl'
       })
+      .when('/how/borrow', {
+        templateUrl: 'partials/borrow.html'
+      })
+      .when('/how/pay', {
+         templateUrl: 'partials/pay.html'
+      })
       .when('/login', {
         templateUrl: 'partials/login.html',
         controller: 'LoginCtrl',
