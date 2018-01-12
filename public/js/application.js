@@ -53,6 +53,12 @@ angular.module('MyApp', [
         resolve: { skipIfAuthenticated: skipIfAuthenticated }
       })
 
+      .when('/loans', {
+         templateUrl: 'partials/loans.html',
+         controller: 'LoansCtrl',
+         resolve: { loginRequired: loginRequired }
+      })
+
       .when('/terms', {
           templateUrl: 'partials/terms.html'
       })
