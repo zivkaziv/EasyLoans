@@ -1,5 +1,5 @@
 angular.module('MyApp')
-    .controller('HomeCtrl', function($scope, $location, $window, $auth) {
+    .controller('LoansCtrl', function($scope, $location, $window, $auth) {
         $scope.slider = {
             value: 40,
             options: {

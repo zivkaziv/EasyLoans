@@ -20,6 +20,11 @@ angular.module('MyApp', [
       .when('/how/pay', {
          templateUrl: 'partials/pay.html'
       })
+      .when('/request', {
+          templateUrl: 'partials/request.html',
+          controller: 'LoansCtrl',
+          resolve: { loginRequired: loginRequired }
+      })
       .when('/login', {
         templateUrl: 'partials/login.html',
         controller: 'LoginCtrl',
@@ -45,6 +50,17 @@ angular.module('MyApp', [
         controller: 'ResetCtrl',
         resolve: { skipIfAuthenticated: skipIfAuthenticated }
       })
+
+      .when('/terms', {
+          templateUrl: 'partials/terms.html'
+      })
+      .when('/faq', {
+          templateUrl: 'partials/faq.html'
+      })
+      .when('/about', {
+          templateUrl: 'partials/about.html'
+      })
+
       .otherwise({
         templateUrl: 'partials/404.html'
       });
@@ -53,7 +69,7 @@ angular.module('MyApp', [
     $authProvider.signupUrl = '/signup';
     $authProvider.facebook({
       url: '/auth/facebook',
-      clientId: '980220002068787',
+      clientId: '122165175143941',
       redirectUri: 'http://localhost:3000/auth/facebook/callback'
     });
 

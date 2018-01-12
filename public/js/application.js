@@ -3,8 +3,8 @@ angular.module('MyApp', [
     'satellizer','rzModule'])
 
     .config(["$routeProvider", "$locationProvider", "$authProvider", function($routeProvider, $locationProvider, $authProvider) {
-    skipIfAuthenticated.$inject = ["$location", "$auth"];
     loginRequired.$inject = ["$location", "$auth"];
+    skipIfAuthenticated.$inject = ["$location", "$auth"];
     $locationProvider.html5Mode(true);
 
     $routeProvider
@@ -21,6 +21,11 @@ angular.module('MyApp', [
       })
       .when('/how/pay', {
          templateUrl: 'partials/pay.html'
+      })
+      .when('/request', {
+          templateUrl: 'partials/request.html',
+          controller: 'LoansCtrl',
+          resolve: { loginRequired: loginRequired }
       })
       .when('/login', {
         templateUrl: 'partials/login.html',
@@ -47,6 +52,17 @@ angular.module('MyApp', [
         controller: 'ResetCtrl',
         resolve: { skipIfAuthenticated: skipIfAuthenticated }
       })
+
+      .when('/terms', {
+          templateUrl: 'partials/terms.html'
+      })
+      .when('/faq', {
+          templateUrl: 'partials/faq.html'
+      })
+      .when('/about', {
+          templateUrl: 'partials/about.html'
+      })
+
       .otherwise({
         templateUrl: 'partials/404.html'
       });
@@ -55,7 +71,7 @@ angular.module('MyApp', [
     $authProvider.signupUrl = '/signup';
     $authProvider.facebook({
       url: '/auth/facebook',
-      clientId: '980220002068787',
+      clientId: '122165175143941',
       redirectUri: 'http://localhost:3000/auth/facebook/callback'
     });
 
@@ -145,20 +161,24 @@ angular.module('MyApp')
                 ]
             }
         };
+    }]);
 
-
-        $scope.isActive = function (viewLocation) {
-            return viewLocation === $location.path();
-        };
-
-        $scope.isAuthenticated = function() {
-            return $auth.isAuthenticated();
-        };
-
-        $scope.logout = function() {
-            $auth.logout();
-            delete $window.localStorage.user;
-            $location.path('/');
+angular.module('MyApp')
+    .controller('LoansCtrl', ["$scope", "$location", "$window", "$auth", function($scope, $location, $window, $auth) {
+        $scope.slider = {
+            value: 40,
+            options: {
+                showTicksValues: true,
+                stepsArray: [
+                    // {value: '20', legend: '20€'},
+                    {value: '20'},
+                    {value: '40'},
+                    {value: '50'},
+                    {value: '70'},
+                    {value: '100'}
+                    // {value: 4},
+                ]
+            }
         };
     }]);
 

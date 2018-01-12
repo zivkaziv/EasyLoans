@@ -20,6 +20,7 @@ var User = require('./models/User');
 // Controllers
 var userController = require('./controllers/user');
 var contactController = require('./controllers/contact');
+var loanController = require('./controllers/loan');
 
 var app = express();
 
