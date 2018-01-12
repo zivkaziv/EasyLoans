@@ -1,13 +1,43 @@
 angular.module('MyApp')
     .controller('LoansCtrl', function($scope, $q, $timeout) {
-        var vm = this;
+        $scope.slider = {
+            value: 40,
+            options: {
+                showTicksValues: true,
+                stepsArray: [
+                    // {value: '20', legend: '20€'},
+                    {value: '20'},
+                    {value: '40'},
+                    {value: '50'},
+                    {value: '70'},
+                    {value: '100'}
+                    // {value: 4},
+                ]
+            }
+        };
 
+        var vm = this;
+        $scope.vm = vm;
         vm.selectedStep = 0;
         vm.stepProgress = 1;
         vm.maxStep = 3;
         vm.showBusyText = false;
         vm.stepData = [
-            { step: 1, completed: false, optional: false, data: {} },
+            { step: 1, completed: true, optional: false, data: {
+                value: 40,
+                options: {
+                    showTicksValues: true,
+                    stepsArray: [
+                        // {value: '20', legend: '20€'},
+                        {value: '20'},
+                        {value: '40'},
+                        {value: '50'},
+                        {value: '70'},
+                        {value: '100'}
+                        // {value: 4},
+                    ]
+                }
+            } },
             { step: 2, completed: false, optional: false, data: {} },
             { step: 3, completed: false, optional: false, data: {} }
         ];
