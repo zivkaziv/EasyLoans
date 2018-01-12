@@ -9,6 +9,7 @@ var schemaOptions = {
 
 var loanSchema = new mongoose.Schema({
     amount: String,
+    reason: String,
     status: String,
     requestedBy: {},
     approvedBy: {}

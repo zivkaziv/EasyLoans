@@ -11,6 +11,7 @@ var schemaOptions = {
 
 var userSchema = new mongoose.Schema({
   name: String,
+  lastName: String,
   email: { type: String, unique: true},
   password: String,
   passwordResetToken: String,
@@ -19,6 +20,10 @@ var userSchema = new mongoose.Schema({
   location: String,
   creditScore: String,
   Loans:[{}],
+  personalId:String,
+  phoneNumber:String,
+  bankAccount:String,
+  monthlyIncome:String,
   website: String,
   picture: String,
   facebook: String,
