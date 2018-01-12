@@ -450,3 +450,11 @@ angular.module('MyApp')
       }
     };
   }]);
+angular.module('MyApp')
+    .factory('Loan', ["$http", function($http) {
+        return {
+            create: function(data) {
+                return $http.post('/loan', data);
+            }
+        };
+    }]);
