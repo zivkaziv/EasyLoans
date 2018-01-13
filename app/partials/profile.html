@@ -9,18 +9,28 @@
       </div>
       <form ng-submit="updateProfile()" class="form-horizontal">
         <legend>Profile Information</legend>
+        <!--Email-->
         <div class="form-group">
           <label for="email" class="col-sm-3">Email</label>
           <div class="col-sm-7">
             <input type="email" name="email" id="email" class="form-control" ng-model="profile.email">
           </div>
         </div>
+        <!--First Name-->
         <div class="form-group">
-          <label for="name" class="col-sm-3">Name</label>
+          <label for="first-name" class="col-sm-3">First Name</label>
           <div class="col-sm-7">
-            <input type="text" name="name" id="name" class="form-control" ng-model="profile.name">
+            <input type="text" name="first name" id="first-name" class="form-control" ng-model="profile.firstName">
           </div>
         </div>
+        <!--Last Name-->
+        <div class="form-group">
+          <label for="last-name" class="col-sm-3">Last Name</label>
+          <div class="col-sm-7">
+            <input type="text" name="last name" id="last-name" class="form-control" ng-model="profile.lastName">
+          </div>
+        </div>
+        <!--Gender-->
         <div class="form-group">
           <label class="col-sm-3">Gender</label>
           <div class="col-sm-4">
@@ -32,24 +42,48 @@
             </label>
           </div>
         </div>
+        <!--ID-->
         <div class="form-group">
-          <label for="location" class="col-sm-3">Location</label>
+          <label for="userId" class="col-sm-3">ID</label>
           <div class="col-sm-7">
-            <input type="text" name="location" id="location" class="form-control" ng-model="profile.location">
+            <input type="text" name="ID" id="userId" class="form-control" ng-model="profile.personalId">
           </div>
         </div>
+        <!--Mobile Number-->
         <div class="form-group">
-          <label for="website" class="col-sm-3">Website</label>
+          <label for="mobile-number" class="col-sm-3">Mobile Number</label>
           <div class="col-sm-7">
-            <input type="text" name="website" id="website" class="form-control" ng-model="profile.website">
+            <input type="text" name="Mobile Number" id="mobile-number" class="form-control" ng-model="profile.phoneNumber">
           </div>
         </div>
+        <!--City-->
         <div class="form-group">
-          <label class="col-sm-3">Gravatar</label>
-          <div class="col-sm-4">
-            <img ng-src="{{profile.gravatar}}" class="profile" width="100" height="100">
+          <label for="city" class="col-sm-3">City</label>
+          <div class="col-sm-7">
+            <input type="text" name="city" id="city" class="form-control" ng-model="profile.city">
           </div>
         </div>
+        <!--Address-->
+        <div class="form-group">
+          <label for="address" class="col-sm-3">Address</label>
+          <div class="col-sm-7">
+            <input type="text" name="address" id="address" class="form-control" ng-model="profile.address">
+          </div>
+        </div>
+        <!--Bank Account-->
+        <div class="form-group">
+          <label for="bank-account" class="col-sm-3">Bank Account</label>
+          <div class="col-sm-7">
+            <input type="text" name="Bank Account" id="bank-account" class="form-control" ng-model="profile.bankAccount">
+          </div>
+        </div>
+
+        <!--<div class="form-group">-->
+          <!--<label class="col-sm-3">Gravatar</label>-->
+          <!--<div class="col-sm-4">-->
+            <!--<img ng-src="{{profile.gravatar}}" class="profile" width="100" height="100">-->
+          <!--</div>-->
+        <!--</div>-->
         <div class="form-group">
           <div class="col-sm-offset-3 col-sm-4">
             <button type="submit" class="btn btn-success">Update Profile</button>
