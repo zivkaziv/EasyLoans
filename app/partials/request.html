@@ -6,7 +6,7 @@
                     <div class="md-toolbar-tools">
                         <h2>
                             <md-icon md-svg-icon="md-menu"></md-icon>
-                            <span>Create account</span>
+                            <span>Loan Request</span>
                         </h2>
                     </div>
                 </md-toolbar>
@@ -64,6 +64,13 @@
                                                     <label>What are you going to do with the money</label>
                                                     <input name="reason" ng-model="vm.stepData[1].data.reason"/>
                                                 </md-input-container>
+                                            </div>
+                                        </div>
+                                        <div layout="row" layout-align="center top">
+                                            <div flex="nogrow">
+                                                <md-checkbox ng-model="vm.stepData[1].data.confirmation" aria-label="Confirm">
+                                                    I confirm that I understand and agree to the <a href="/terms" target="_blank">terms of the contract</a>
+                                                </md-checkbox>
                                             </div>
                                         </div>
                                     </md-content>
