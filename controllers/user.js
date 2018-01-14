@@ -116,8 +116,14 @@ exports.accountPut = function(req, res, next) {
     } else {
       user.email = req.body.email;
       user.name = req.body.name;
+      user.firstName = req.body.firstName;
+      user.lastName = req.body.lastName;
+      user.dob = req.body.dob;
       user.gender = req.body.gender;
-      user.location = req.body.location;
+      user.address = req.body.address;
+      user.bankAccount = req.body.bankAccount;
+      user.personalId = req.body.personalId;
+      user.phoneNumber = req.body.phoneNumber;
       user.website = req.body.website;
     }
     user.save(function(err) {
