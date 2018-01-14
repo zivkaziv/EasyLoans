@@ -77,6 +77,14 @@
             <input type="text" name="Bank Account" id="bank-account" class="form-control" ng-model="profile.bankAccount">
           </div>
         </div>
+        <!--DOB-->
+        <div class="form-group">
+          <label for="dob" class="col-sm-3">Date Of Birth</label>
+          <div class="col-sm-7">
+            <md-datepicker id="dob" ng-model="profile.dob" md-placeholder="Enter date"  md-is-open="isOpen"></md-datepicker>
+            <md-button class="md-primary md-raised" ng-click="isOpen = true">Open</md-button>
+          </div>
+        </div>
 
         <!--<div class="form-group">-->
           <!--<label class="col-sm-3">Gravatar</label>-->
