@@ -154,9 +154,10 @@ angular.module('MyApp')
   }]);
 
 angular.module('MyApp')
-    .controller('HomeCtrl', ["$scope", "$location", "$window", "$auth", function($scope, $location, $window, $auth) {
+    .controller('HomeCtrl', ["$scope", "Loan", "$location", "$window", "$auth", function($scope,Loan, $location, $window, $auth) {
+        $scope.loan = Loan.loan;
+
         $scope.slider = {
-            value: 40,
             options: {
                 showTicksValues: true,
                 stepsArray: [
@@ -173,9 +174,9 @@ angular.module('MyApp')
     }]);
 
 angular.module('MyApp')
-    .controller('LoansCtrl', ["$scope", "$q", "$timeout", function($scope, $q, $timeout) {
+    .controller('LoansCtrl', ["$scope", "$q", "$timeout", "Loan", function($scope, $q, $timeout,Loan) {
+        $scope.loan = Loan.loan;
         $scope.slider = {
-            value: 40,
             options: {
                 showTicksValues: true,
                 stepsArray: [
@@ -453,6 +454,14 @@ angular.module('MyApp')
 angular.module('MyApp')
     .factory('Loan', ["$http", function($http) {
         return {
+            loan:{
+                value:'40'
+            },
+
+            resetLoan:function(){
+              this.loan.value ='40'
+            },
+
             create: function(data) {
                 return $http.post('/loan', data);
             }

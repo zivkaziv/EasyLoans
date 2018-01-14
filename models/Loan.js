@@ -8,7 +8,7 @@ var schemaOptions = {
 };
 
 var loanSchema = new mongoose.Schema({
-    amount: String,
+    value: String,
     reason: String,
     status: String,
     requestedBy: {},

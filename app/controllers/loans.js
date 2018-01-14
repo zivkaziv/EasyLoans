@@ -1,7 +1,7 @@
 angular.module('MyApp')
-    .controller('LoansCtrl', function($scope, $q, $timeout) {
+    .controller('LoansCtrl', function($scope, $q, $timeout,Loan) {
+        $scope.loan = Loan.loan;
         $scope.slider = {
-            value: 40,
             options: {
                 showTicksValues: true,
                 stepsArray: [

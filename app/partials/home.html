@@ -5,13 +5,13 @@
         <div class="panel-body">
           <h3>Money</h3>
           <div style="margin-top: 10px">
-            <rzslider rz-slider-model="slider.value"
+            <rzslider rz-slider-model="loan.value"
                       rz-slider-options="slider.options"></rzslider>
           </div>
           <div class="metadata-container">
             <div class="metadata-loan-pair">
               <div class="metadata-loan-title">Loan amount of</div>
-              <div class="metadata-loan-value">{{slider.value}}€</div>
+              <div class="metadata-loan-value">{{loan.value}}€</div>
             </div>
 
             <div class="metadata-loan-pair">
@@ -21,12 +21,12 @@
 
             <div class="metadata-loan-pair">
               <div class="metadata-loan-title">Commission</div>
-              <div class="metadata-loan-value metadata-loan-value-red">{{(slider.value * 0.058) | number:2}}€</div>
+              <div class="metadata-loan-value metadata-loan-value-red">{{(loan.value * 0.058) | number:2}}€</div>
             </div>
 
             <div class="metadata-loan-pair">
               <div class="metadata-loan-title">Cover amount</div>
-              <div class="metadata-loan-value metadata-loan-value-red">{{(slider.value * 1.058) | number:2 }}€</div>
+              <div class="metadata-loan-value metadata-loan-value-red">{{(loan.value * 1.058) | number:2 }}€</div>
             </div>
           </div>
           <a href="/request" role="button" class="btn btn-default">Get Loan</a>

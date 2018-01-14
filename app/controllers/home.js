@@ -1,7 +1,8 @@
 angular.module('MyApp')
-    .controller('HomeCtrl', function($scope, $location, $window, $auth) {
+    .controller('HomeCtrl', function($scope,Loan, $location, $window, $auth) {
+        $scope.loan = Loan.loan;
+
         $scope.slider = {
-            value: 40,
             options: {
                 showTicksValues: true,
                 stepsArray: [
