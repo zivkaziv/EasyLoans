@@ -25,7 +25,7 @@
                                         <div class="metadata-container">
                                             <div class="metadata-loan-pair">
                                                 <div class="metadata-loan-title">Loan amount of</div>
-                                                <div class="metadata-loan-value">{{slider.value}}€</div>
+                                                <div class="metadata-loan-value">{{loan.value}}€</div>
                                             </div>
 
                                             <div class="metadata-loan-pair">
@@ -35,12 +35,12 @@
 
                                             <div class="metadata-loan-pair">
                                                 <div class="metadata-loan-title">Commission</div>
-                                                <div class="metadata-loan-value metadata-loan-value-red">{{(slider.value * 0.058) | number:2}}€</div>
+                                                <div class="metadata-loan-value metadata-loan-value-red">{{(loan.value * 0.058) | number:2}}€</div>
                                             </div>
 
                                             <div class="metadata-loan-pair">
                                                 <div class="metadata-loan-title">Cover amount</div>
-                                                <div class="metadata-loan-value metadata-loan-value-red">{{(slider.value * 1.058) | number:2 }}€</div>
+                                                <div class="metadata-loan-value metadata-loan-value-red">{{(loan.value * 1.058) | number:2 }}€</div>
                                             </div>
                                         </div>
                                     </md-content>
